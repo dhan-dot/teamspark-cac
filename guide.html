@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamSpark - Discover Competitions</title>
+
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="guide-page">
+
+        <header id="appNavbar" class="app-navbar" hidden>
+    
+            <a href="guide.html" class="app-logo">
+                TeamSpark
+            </a>
+    
+            <nav class="app-nav" aria-label="Main navigation">
+    
+                <a href="guide.html">Discover</a>
+    
+                <a href="matches.html">Teammates</a>
+    
+                <a href="chat.html">Chat</a>
+    
+                <a href="profile.html?view=account">My Account</a>
+    
+            </nav>
+    
+        </header>
+    
+        <main class="guide-card">
+
+            <h1>Discover Your Next Competition</h1>
+<p>Tell TeamSpark what you enjoy doing, and we'll help you find competitions that fit your interests.</p>
+<textarea
+    id="guideInput"
+    placeholder="Example: I like coding, robotics, biology, and building things."
+></textarea>
+<button id="guideButton">Find Competitions</button>
+<p id="guideResult"></p>
+<button id="continueButton" style="display: none;">
+    Continue to Profile
+</button>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>

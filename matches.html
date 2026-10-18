@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamSpark - Find Teammates</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="matches-page">
+    <header id="appNavbar" class="app-navbar" hidden>
+
+        <a href="guide.html" class="app-logo">
+            TeamSpark
+        </a>
+
+        <nav class="app-nav" aria-label="Main navigation">
+    
+            <a href="guide.html">Discover</a>
+    
+            <a href="matches.html">Teammates</a>
+    
+            <a href="chat.html">Chat</a>
+    
+            <a href="profile.html?view=account">My Account</a>
+    
+        </nav>
+    
+    </header>
+    <h1>Your Potential Teammates</h1>
+    <p>TeamSpark shows your strongest matches first based on shared interests, complementary skills, and availability.</p>
+    <div id="matchesContainer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>

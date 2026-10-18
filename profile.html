@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamSpark - My Account</title>
+</head>
+<body class="profile-page">
+
+    <header id="appNavbar" class="app-navbar" hidden>
+
+        <a href="guide.html" class="app-logo">
+            TeamSpark
+        </a>
+
+        <nav class="app-nav" aria-label="Main navigation">
+
+            <a href="guide.html">Discover</a>
+
+            <a href="matches.html">Teammates</a>
+
+            <a href="chat.html">Chat</a>
+
+            <a href="profile.html?view=account">My Account</a>
+
+        </nav>
+
+    </header>
+
+    <main class="profile-card">
+
+        <h1>My TeamSpark Account</h1>
+        <p class="profile-description">
+            Manage your competition, interests, skills, and availability.
+        </p>
+    <form id="profileForm">
+    <div class="form-group">
+        <label for="competition">Target Competition:</label>
+    
+        <select id="competition">
+<option value="">Choose a competition</option>
+<option value="fll">FIRST LEGO League (FLL)</option>
+<option value="vex">VEX Robotics</option>
+<option value="sci-oly">Science Olympiad</option>
+<option value="mathcounts">MATHCOUNTS</option>
+<option value="science-bowl">National Science Bowl</option>
+<option value="iac-science">IAC Science Bee</option>
+<option value="iac-history">IAC History Bee</option>
+<option value="iac-geography">IAC Geography Bee</option>
+<option value="math-kangaroo">Math Kangaroo</option>
+<option value="amc">AMC</option>
+<option value="odyssey">Odyssey of the Mind</option>
+<option value="model-un">Model United Nations</option>
+<option value="tsa">Technology Student Association</option>
+<option value="cac">Congressional App Challenge</option>
+<option value="hackathon">Hackathons</option>
+<option value="science-fair">Science Fair</option>
+<option value="cyberpatriot">CyberPatriot</option>
+<option value="quiz-bowl">Quiz Bowl</option>
+<option value="debate">Debate</option>
+<option value="entrepreneurship">Entrepreneurship Competition</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="interests">Interests:</label>
+        <input
+            type="text"
+            id="interests"
+            name="interests"
+            placeholder="e.g. Robotics, Biology, Coding"
+        >
+    </div>
+    <div class="form-group">
+        <label for="skills">Key Skills:</label>
+        <input
+            type="text"
+            id="skills"
+            name="skills"
+            placeholder="e.g. Research, Math, Programming">
+    </div>
+    <div class="form-group">
+        <label for="availability">Availability:</label>
+    
+        <select id="availability">
+            <option value="">Choose availability</option>
+            <option value="weekdays">Weekdays</option>
+            <option value="weekends">Weekends</option>
+            <option value="both">Weekdays and Weekends</option>
+        </select>
+    </div>
+    <button type="submit">Find My Teammates</button>
+</form>
+
+<button type="button" id="signOutButton">
+    Sign Out
+</button>
+
+</main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
