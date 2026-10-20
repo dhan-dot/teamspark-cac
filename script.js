@@ -183,7 +183,7 @@ if (profilePageParams.get("view") === "account") {
 }
     });
 }
-/*const students = [
+const demoStudents = [
     {
         name: "Alex",
         competition: "sci-oly",
@@ -381,7 +381,7 @@ if (profilePageParams.get("view") === "account") {
         skills: ["marketing", "presentation"],
         availability: "both"
     }
-];*/
+];
 function calculateMatch(user, student) {
 
     // Students must be interested in the same competition
@@ -472,6 +472,25 @@ async function loadRealStudents() {
 }
 
 loadRealStudents();
+
+let demoModeEnabled = false;
+
+const demoModeButton = document.getElementById("demoModeButton");
+
+if (demoModeButton) {
+    demoModeButton.addEventListener("click", function() {
+        demoModeEnabled = !demoModeEnabled;
+
+        if (demoModeEnabled) {
+            displayMatches(demoStudents);
+            demoModeButton.textContent = "View Real Teammates";
+        } else {
+            loadRealStudents();
+            demoModeButton.textContent = "View Demo Teammates";
+        }
+    });
+}
+
 const matchesContainer =
     document.getElementById("matchesContainer");
 
@@ -581,11 +600,18 @@ function displayMatches(students) {
                 : "Different availability") +
             "</p>";
 
-            matchesContainer.innerHTML +=
-            "<button class='interestButton' " +
-            "data-name='" + student.name + "' " +
-            "data-user-id='" + student.userId + "'>" +
-            "I'm Interested</button>";
+            if (student.userId) {
+                matchesContainer.innerHTML +=
+                    "<button class='interestButton' " +
+                    "data-name='" + student.name + "' " +
+                    "data-user-id='" + student.userId + "'>" +
+                    "I'm Interested</button>";
+            } else {
+                matchesContainer.innerHTML +=
+                    "<p><strong>Sample Student — Demo Only</strong></p>" +
+                    "<button class='interestButton' disabled>" +
+                    "Demo Profile</button>";
+            }
 
             const card = document.createElement("div");
 
@@ -635,21 +661,7 @@ if (match.complementarySkills.length === 0) {
 
         return;
     }
-    const skillTagsContainer =
-    card.querySelector(".skill-tags");
-
-if (match.complementarySkills.length === 0) {
-    skillTagsContainer.textContent = "None yet";
-} else {
-    match.complementarySkills.forEach(function(skill) {
-        const tag = document.createElement("span");
-
-        tag.className = "skill-tag";
-        tag.textContent = skill;
-
-        skillTagsContainer.appendChild(tag);
-    });
-}
+   
 
     const interestButtons =
         document.querySelectorAll(".interestButton");
