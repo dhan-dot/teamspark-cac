@@ -816,6 +816,10 @@ async function loadParentApproval(token) {
         " wants to connect with " +
         approval.teammate_name +
         ".";
+
+document.getElementById("approveParent").disabled = false;
+document.getElementById("declineParent").disabled = false;
+
 }
 const approveParent =
     document.getElementById("approveParent");

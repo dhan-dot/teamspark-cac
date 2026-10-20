@@ -1,17 +1,186 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Parent Approval | TeamSpark</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eaf3ff;
+            color: #193e63;
+            min-height: 100vh;
+        }
+
+        header {
+            background: white;
+            padding: 22px 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            color: #3498db;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 620px;
+            margin: 70px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            color: #48647f;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .approval-card {
+            background: white;
+            padding: 40px 35px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(29, 66, 104, 0.08);
+        }
+
+
+        h2 {
+            font-size: 24px;
+            margin: 10px 0 20px;
+        }
+
+        #approvalDetails {
+            background: #f1f6fc;
+            padding: 22px;
+            border-radius: 10px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #294c70;
+            margin-bottom: 25px;
+        }
+
+        .approval-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        button {
+            border: none;
+            border-radius: 9px;
+            padding: 15px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        #approveParent {
+            background: #21865a;
+            color: white;
+        }
+
+        #declineParent {
+            background: white;
+            color: #c34b4b;
+            border: 2px solid #c34b4b;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .safety-note {
+            margin-top: 25px;
+            color: #647d95;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 18px 20px;
+            }
+
+            main {
+                margin: 40px auto;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .approval-card {
+                padding: 28px 20px;
+            }
+
+            .approval-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Parent Approval</h1>
-    <p id="approvalDetails"></p>
-    <button id="approveParent">Approve</button>
-    <button id="declineParent">Decline</button>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="script.js"></script>
+
+    <header>
+        <div class="logo">TeamSpark</div>
+    </header>
+
+    <main>
+        <h1>Parent Approval</h1>
+
+        <p class="subtitle">
+            Helping students connect safely,
+            with parental permission.
+        </p>
+
+        <div class="approval-card">
+
+
+            <h2>Review Connection Request</h2>
+
+            <p id="approvalDetails">
+                Loading approval details...
+            </p>
+
+            <div class="approval-buttons">
+                <button id="approveParent" disabled>
+                    Approve
+                </button>
+
+                <button id="declineParent" disabled>
+                    Decline
+                </button>
+            </div>
+
+            <p class="safety-note">
+                Both parents must approve before
+                students can communicate.
+                TeamSpark only allows predefined
+                messages for safer communication.
+            </p>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
