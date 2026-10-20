@@ -1,34 +1,176 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeamSpark - Sign In</title>
+    <title>Sign In | TeamSpark</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body.signin-page {
+            margin: 0;
+            min-height: 100vh;
+            background: #eaf3ff;
+            font-family: Arial, sans-serif;
+            color: #193e63;
+        }
+
+        .signin-header {
+            background: white;
+            padding: 22px 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .signin-logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        
+        .signin-main {
+              min-height: auto;
+               display: flex;
+                align-items: flex-start;
+              justify-content: center;
+              padding: 45px 20px 60px;
+            }
+
+
+        .signin-card {
+            background: white;
+            width: 100%;
+            max-width: 480px;
+            padding: 45px 40px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(29, 66, 104, 0.08);
+            box-sizing: border-box;
+        }
+
+        .signin-card h1 {
+            color: #193e63;
+            font-size: 32px;
+            text-align: center;
+            margin: 0 0 12px;
+        }
+
+        .signin-subtitle {
+            color: #48647f;
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        #signinForm {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #signinForm label {
+            font-weight: bold;
+            color: #193e63;
+            margin-top: 8px;
+        }
+
+        #signinForm input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #cbd9e8;
+            border-radius: 9px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background: white;
+        }
+
+        #signinForm input:focus {
+            outline: 2px solid #3498db;
+            outline-offset: 1px;
+        }
+
+        #signinForm button {
+            margin-top: 18px;
+            padding: 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #signinForm button:hover {
+            background: #2583c2;
+        }
+
+        @media (max-width: 480px) {
+            .signin-header {
+                padding: 18px 20px;
+            }
+
+            .signin-card {
+                padding: 30px 22px;
+            }
+
+            .signin-card h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
 </head>
 
-<body>
-    <h1>Welcome back to TeamSpark</h1>
+<body class="signin-page">
 
-<form id="signinForm">
+    <header class="signin-header">
+        <a href="index.html" class="signin-logo">
+            TeamSpark
+        </a>
+    </header>
+
+    <main class="signin-main">
+        <section class="signin-card">
+            <h1>Welcome Back!</h1>
+
+            <p class="signin-subtitle">
+                Sign in to TeamSpark and continue
+                finding your perfect teammates.
+            </p>
+
+            <form id="signinForm">
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="submit">
+                    Sign In
+                </button>
+
+            </form>
+        </section>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
-</html> 
-
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email">
-    </div>
-
-    <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password">
-    </div>
-
-    <button type="submit">Sign In</button>
-
-</form>
+</html>

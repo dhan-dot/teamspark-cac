@@ -711,3 +711,133 @@ button:hover {background-color: #217DBB;
     background: #f0f7ff;
     border-color: #3498db;
 }
+
+/* TeamSpark Safe Chat */
+
+body.chat-page {
+    min-height: 100vh;
+    margin: 0;
+    background: #eaf3ff;
+    font-family: Arial, sans-serif;
+    color: #193e63;
+}
+
+body.chat-page > h1 {
+    text-align: center;
+    font-size: 38px;
+    margin: 55px 20px 12px;
+    color: #193e63;
+}
+
+body.chat-page > p {
+    text-align: center;
+    font-size: 17px;
+    color: #48647f;
+    margin: 0 20px 30px;
+    line-height: 1.6;
+}
+
+#chatMessages {
+    background: #ffffff;
+    max-width: 850px;
+    min-height: 320px;
+    max-height: 420px;
+    overflow-y: auto;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #dbe5ef;
+    box-shadow: 0 8px 25px rgba(29, 66, 104, 0.08);
+    box-sizing: border-box;
+}
+
+#chatMessages .my-message {
+    background: #3498db;
+    color: white;
+    padding: 14px 18px;
+    border-radius: 16px 16px 4px 16px;
+    margin: 12px 0 12px auto;
+    max-width: 75%;
+    width: fit-content;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#chatMessages .teammate-message {
+    background: #edf2f7;
+    color: #193e63;
+    padding: 14px 18px;
+    border-radius: 16px 16px 16px 4px;
+    margin: 12px auto 12px 0;
+    max-width: 75%;
+    width: fit-content;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#messageChoices {
+    max-width: 850px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px auto 60px;
+}
+
+#messageChoices .presetMessage {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#messageChoices .presetMessage:hover:not(:disabled) {
+    background: #247db6;
+}
+
+#messageChoices .presetMessage:disabled {
+    background: #a9c2d6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+    #chatMessages {
+        margin: 0 20px;
+    }
+
+    #messageChoices {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body.chat-page > h1 {
+        font-size: 29px;
+        margin-top: 35px;
+    }
+
+    #chatMessages {
+        min-height: 280px;
+        padding: 16px;
+    }
+
+    #messageChoices .presetMessage {
+        width: 100%;
+    }
+}
+
+body.chat-page > h1,
+body.chat-page > p {
+    width: 100%;
+    max-width: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}

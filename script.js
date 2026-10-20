@@ -424,6 +424,44 @@ async function loadRealStudents() {
         console.log("No signed-in user.");
         return;
     }
+    
+    const { data: myProfile, error: myProfileError } =
+        await supabaseClient
+            .from("profiles")
+            .select("competition, interests, skills, availability")
+            .eq("user_id", userData.user.id)
+            .maybeSingle();
+
+    if (myProfileError) {
+        console.log("Profile restoration error:", myProfileError);
+        return;
+    }
+
+    if (!myProfile) {
+        console.log("No saved profile found for this student.");
+        return;
+    }
+
+    const restoredProfile = {
+        competition: myProfile.competition,
+        interests: (myProfile.interests || "")
+            .toLowerCase()
+            .split(",")
+            .map(item => item.trim())
+            .filter(Boolean),
+        skills: (myProfile.skills || "")
+            .toLowerCase()
+            .split(",")
+            .map(item => item.trim())
+            .filter(Boolean),
+        availability: myProfile.availability
+    };
+
+    localStorage.setItem(
+        "teamSparkProfile",
+        JSON.stringify(restoredProfile)
+    );
+
 
     const { data: matchProfiles, error: matchError } =
         await supabaseClient
